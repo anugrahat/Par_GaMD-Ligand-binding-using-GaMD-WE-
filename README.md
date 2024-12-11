@@ -58,4 +58,9 @@ For detailed instructions and resources, refer to the ParGaMD GitHub repository.
 By following these steps, you can effectively perform ParGaMD simulations to explore biomolecular dynamics with enhanced sampling and parallelization.
 
 
-Sources
+Sources 
+
+1. https://github.com/Sonti974948/ParGaMD
+2. Yinglong Miao, Victoria A. Feher, and J. Andrew McCammon, Journal of Chemical Theory and Computation 2015 11 (8), 3584-3595, DOI: 10.1021/acs.jctc.5b00436
+3. https://westpa.github.io/westpa/static/we_overview.pdf
+4. https://github.com/westpa/westpa_tutorials
