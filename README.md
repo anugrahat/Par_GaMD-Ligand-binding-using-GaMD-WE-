@@ -56,3 +56,13 @@ ParGaMD combines Gaussian Accelerated Molecular Dynamics (GaMD) with the Weighte
 For detailed instructions and resources, refer to the [ParGaMD GitHub repository](https://github.com/Sonti974948/ParGaMD).
 
 By following these steps, you can effectively perform ParGaMD simulations to explore biomolecular dynamics with enhanced sampling and parallelization. 
+
+Sources: 
+
+1. For installing WESTPA see instructions at https://github.com/westpa/westpa
+2. GamD information at Yinglong Miao, Victoria A. Feher, and J. Andrew McCammon
+Journal of Chemical Theory and Computation 2015 11 (8), 3584-3595
+DOI: 10.1021/acs.jctc.5b00436 and https://www.med.unc.edu/pharm/miaolab/resources/gamd/
+3. https://github.com/westpa
+4. https://github.com/Sonti974948/ParGaMD (Original ParGaMD information and protein folding example if you want to start with a tutorial and smaller system)
+   
