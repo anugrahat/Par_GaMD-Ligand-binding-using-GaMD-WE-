@@ -1,15 +1,15 @@
-ParGaMD combines Gaussian Accelerated Molecular Dynamics (GaMD) with the Weighted Ensemble (WE) framework to enhance sampling efficiency in molecular simulations.
+ParGaMD combines Gaussian Accelerated Molecular Dynamics (GaMD) with the Weighted Ensemble (WE) framework to enhance sampling efficiency in molecular simulations. These scripts are for GPU acceleration using SDSC expanse cluster. 
 
 Simulation Steps:
 
-Run a Conventional GaMD Simulation:
+1. Run a Conventional GaMD Simulation:
 
 Navigate to the cMD directory.
 Execute: sbatch run_cmd.sh
 This generates gamd-restart.dat for ParGaMD setup.
 Configure the WE Framework:
 
-In the main directory, run: ./run_WE.sh
+2. In the main directory, run: ./run_WE.sh
 This copies gamd-restart.dat and bstate.rst to the appropriate WE directories.
 Update west.cfg:
 
@@ -17,7 +17,7 @@ Set pcoord_len to nstlim/ntpr + 1 in west.cfg.
 Ensure nstlim and ntpr in common_files/md.in are correctly specified.
 Submit the ParGaMD Simulation:
 
-Retrieve the cGaMD job ID: squeue -u <username>
+3.Retrieve the cGaMD job ID: squeue -u <username>
 Submit ParGaMD as a dependent job:
 bash
 Copy code
@@ -25,7 +25,7 @@ sbatch --dependency=afterok:<jobid> run_WE.sh
 Update NODELOC in env.sh to the current directory.
 Post-Processing:
 
-After completion, process data to obtain gamd.log and PC.dat:
+4. After completion, process data to obtain gamd.log and PC.dat:
 bash
 Copy code
 sbatch run_data.sh
@@ -46,7 +46,7 @@ Copy code
 awk 'NR==FNR{a[NR]=$2; next} {print a[FNR], $2}' PC1.dat PC2.dat > output.dat
 Generate Free Energy Surface:
 
-Run the reweighting script:
+5.Run the reweighting script:
 bash
 Copy code
 ./reweight-2d.sh 50 50 0.1 0.1 output.dat 300
