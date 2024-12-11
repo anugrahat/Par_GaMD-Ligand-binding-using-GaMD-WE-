@@ -1,0 +1,53 @@
+ &cntrl
+    imin=0,        ! No minimization
+    irest=1,       ! NOT a restart of an old MD simulation, new velocities will be generated
+    ntx=5,         ! Read only coordinates, new velocities will be generated based on temp0
+
+    ! Temperature control
+    ntt=3,         ! Langevin dynamics
+    gamma_ln=5.0,  ! Friction coefficient (ps^-1)
+    temp0=310,  
+    ig = RAND,     ! Target temperature
+
+    ! Potential energy control
+    cut=9.0,      ! nonbonded cutoff, in Angstroms
+
+    ! MD settings
+    nstlim=500000, ! 1 microsecond (1000 ns) cMD + 100 ns GaMD
+    dt=0.002,      ! time step (ps)
+
+    ! SHAKE
+    ntc=2,         ! Constrain bonds containing hydrogen
+    ntf=2,         ! Do not calculate forces of bonds containing hydrogen
+
+    ! Control how often information is printed
+    ntpr=500,    ! Print energies every 10000 steps
+    ntwx=500,    ! Print coordinates every 50000 steps to the trajectory
+    ntwr=500,   ! Print a restart file every 100000 steps
+    ntxo=2,        ! Write NetCDF format
+    ioutfm=1,      ! Write NetCDF format (always do this!)
+
+    ! Wrap coordinates when printing them to the same unit cell
+    iwrap=1,
+
+    ! Constant pressure control.
+    barostat=2,    ! MC barostat... change to 1 for Berendsen
+    ntp=1,         ! 1=isotropic, 2=anisotropic, 3=semi-isotropic w/ surften
+    pres0=1.0,     ! Target external pressure, in bar
+
+    ! Set water atom/residue names for SETTLE recognition
+    watnam='WAT',  ! Water residues are named WAT
+    owtnm='O',     ! Water oxygens are named O
+
+    ! Gaussian accelerated MD dual boost mode
+    igamd=3,            ! Dual boost mode
+    iE=1,               ! GaMD energy threshold E=Vmax
+    ntcmd=0,    ! normal MD steps for collecting parms
+    nteb=50000,      ! GaMD steps for updating parms
+    ntave=50000,       ! numsteps for PE and stdv collection
+    ntcmdprep=0,        ! prep normal MD steps
+    ntebprep=0,         ! prep GaMD steps
+    sigma0P=6.0,        ! upper limit of stdv - totP
+    sigma0D=6.0,        ! upper limit of stdv - dihP
+    irest_gamd=1,       ! restart flag
+ /
