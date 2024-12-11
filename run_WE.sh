@@ -6,7 +6,7 @@
 #SBATCH --gpus=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --mem=50G
-#SBATCH --account=ucd191
+#SBATCH --account=#enter your access account number#
 #SBATCH --no-requeue
 #SBATCH --mail-type=ALL
 #SBATCH -t 36:00:00
