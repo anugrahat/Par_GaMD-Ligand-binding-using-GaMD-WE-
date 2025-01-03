@@ -64,5 +64,5 @@ Sources:
 Journal of Chemical Theory and Computation 2015 11 (8), 3584-3595
 DOI: 10.1021/acs.jctc.5b00436 and https://www.med.unc.edu/pharm/miaolab/resources/gamd/
 3. https://github.com/westpa
-4. https://github.com/Sonti974948/ParGaMD (Original ParGaMD information and protein folding example if you want to start with a tutorial and smaller system)
+4. https://github.com/Sonti974948/ParGaMD (ParGaMD for protein folding example if you want to start with a tutorial and smaller system)
    
